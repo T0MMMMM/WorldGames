@@ -105,7 +105,7 @@ func (g *EngineStruct) init() {
 
 	g.worldToFind = []rune(g.listWorlds[random])
 
-	for len(g.worldToFind) >= 8 || len(g.worldToFind) <= 2 {
+	for len(g.worldToFind) >= 8 || len(g.worldToFind) <= 2 || g.stringInSlice('-', g.worldToFind) {
 		random := rand.Intn(len(g.listWorlds))
 
 		g.worldToFind = []rune(g.listWorlds[random])
