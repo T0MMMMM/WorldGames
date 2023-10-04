@@ -20,6 +20,7 @@ type EngineStruct struct {
 	letterValid []rune
 	posLetterValid []int
 	listWorlds []string
+	listWorldsEnter []string
 
 	font rl.Font
 

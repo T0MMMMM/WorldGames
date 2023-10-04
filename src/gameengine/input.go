@@ -13,8 +13,8 @@ func (g *EngineStruct) input() {
 	}
 	if rl.IsKeyPressed(rl.KeyEnter) && !g.stringInSlice(' ', g.worldFind) {
 
-		for i := 0; i < len(g.listWorlds); i++ {
-			if g.testEq(g.worldFind, []rune(g.listWorlds[i])) {
+		for i := 0; i < len(g.listWorldsEnter); i++ {
+			if g.testEq(g.worldFind, []rune(g.listWorldsEnter[i])) {
 				if g.testEq(g.worldToFind, g.worldFind) {
 					g.win = true
 					g.run = false

@@ -99,6 +99,17 @@ func (g *EngineStruct) init() {
 	}
 	readFile.Close()
 
+	readFile2, err := os.Open("../texture/pli07.txt")
+	if err != nil {
+			fmt.Println(err)
+	}
+	fileScanner2 := bufio.NewScanner(readFile2)
+	fileScanner2.Split(bufio.ScanLines)
+	for fileScanner2.Scan() {
+		g.listWorldsEnter = append(g.listWorldsEnter, fileScanner2.Text())
+	}
+	readFile2.Close()
+
 	rand.Seed(time.Now().UnixNano())
 
 	random := rand.Intn(len(g.listWorlds))
