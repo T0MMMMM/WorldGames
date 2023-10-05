@@ -4,7 +4,7 @@ import (
 	"github.com/gen2brain/raylib-go/raylib"
 )
 
-func (g *EngineStruct) input() {
+func (g *EngineStruct) inputWordle() {
 	for i := 0; i < 26; i++ {
 		g.inputLetter = []int32{rl.KeyQ, rl.KeyB, rl.KeyC, rl.KeyD, rl.KeyE, rl.KeyF, rl.KeyG, rl.KeyH, rl.KeyI, rl.KeyJ, rl.KeyK, rl.KeyL, rl.KeySemicolon, rl.KeyN, rl.KeyO, rl.KeyP, rl.KeyA, rl.KeyR, rl.KeyS, rl.KeyT, rl.KeyU, rl.KeyV, rl.KeyZ, rl.KeyX, rl.KeyY, rl.KeyW}
 		if rl.IsKeyPressed(g.inputLetter[i]) {

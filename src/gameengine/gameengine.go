@@ -11,6 +11,9 @@ type EngineStruct struct {
 	run bool
 	bgColor rl.Color
 
+	showMenu bool
+	numberGame string
+
 	worldToFind []rune
 	worldFind []rune
 	listeWorldFind [][]string
@@ -21,6 +24,10 @@ type EngineStruct struct {
 	posLetterValid []int
 	listWorlds []string
 	listWorldsEnter []string
+
+	letterTest []int
+	letterTestindice []int
+	letters []int
 
 	font rl.Font
 
@@ -35,12 +42,23 @@ func (g *EngineStruct) Play() {
 
 	g.init()
 
-	for g.run {
-		g.update()
-		g.input()
-		g.render()
+	for g.run && g.showMenu {
+		g.menu()
 	}
-	time.Sleep(3 * time.Second)
+
+	for g.run {
+		if g.numberGame == "Wordle" {
+			g.updateWordle()
+			g.inputWordle()
+			g.renderWordle()
+		}
+		if g.numberGame == "Hangman" {
+			g.updateHangman()
+			g.inputHangman()
+			g.renderHangman()
+		}
+	}
+	time.Sleep(2 * time.Second)
 
 	for i := 0; i < g.lenght; i ++ {
 		fmt.Printf(string(g.worldToFind[i]))

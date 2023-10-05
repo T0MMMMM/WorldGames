@@ -4,11 +4,11 @@ import (
 	"github.com/gen2brain/raylib-go/raylib"
 )
 
-func (g *EngineStruct) render() {
+func (g *EngineStruct) renderWordle() {
 	rl.BeginDrawing()
 	rl.ClearBackground(g.bgColor)
 
-	rl.DrawTextEx(g.font, "MOTUS", rl.NewVector2(float32(screenWidth/2-85), 10), 60, 0, rl.White)
+	rl.DrawTextEx(g.font, "WORDLE", rl.NewVector2(float32(screenWidth/2-85), 10), 60, 0, rl.White)
 	
 	rl.DrawTexture(g.texture.keybord, screenWidth/2-g.texture.keybord.Width/2, int32(float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)), rl.White)
 

@@ -4,7 +4,7 @@ import (
 	"github.com/gen2brain/raylib-go/raylib"
 )
 
-func (g *EngineStruct) update() {
+func (g *EngineStruct) updateHangman() {
 
 	g.run = !rl.WindowShouldClose()
 
