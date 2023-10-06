@@ -80,6 +80,8 @@ func (g *EngineStruct) init() {
 
 	g.color = make(map[string]rl.Color)
 
+	g.usedLetters = append(g.usedLetters, 0)
+
 	g.color["green"] = rl.NewColor(34, 80, 42, 255)
 	g.color["yellow"] = rl.NewColor(65, 57, 12, 255)
 	g.color["grey"] = rl.NewColor(21, 21, 21, 255)
@@ -118,23 +120,17 @@ func (g *EngineStruct) init() {
 	readFile2.Close()
 
 	rand.Seed(time.Now().UnixNano())
+	random := rand.Intn(len(g.listWorlds))
 
-	//random := rand.Intn(len(g.listWorlds))
-
-
-	g.worldToFind = []rune{'S', 'A', 'L', 'U', 'T'}
-	//g.worldToFind = []rune(g.listWorlds[random])
-	/*
+	
+	g.worldToFind = []rune(g.listWorlds[random])
 	for len(g.worldToFind) >= 8 || len(g.worldToFind) <= 2 || g.stringInSlice('-', g.worldToFind) {
 		random := rand.Intn(len(g.listWorlds))
 
 		g.worldToFind = []rune(g.listWorlds[random])
 	}
-	*/
-
 	g.lenght = len(g.worldToFind)
 	for i := 0; i < g.lenght; i++ {
 		g.worldFind = append(g.worldFind, ' ')
 	}
-
 }

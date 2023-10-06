@@ -28,6 +28,8 @@ type EngineStruct struct {
 	letterTest []int
 	letterTestindice []int
 	letters []int
+	usedLetters []int32
+	lettersWithoutDoble []int
 
 	font rl.Font
 
