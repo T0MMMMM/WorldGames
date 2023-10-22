@@ -10,8 +10,6 @@ func (g *EngineStruct) renderWordle() {
 
 	rl.DrawTextEx(g.font, "WORDLE", rl.NewVector2(float32(screenWidth/2-85), 10), 60, 0, rl.White)
 	
-	rl.DrawTexture(g.texture.keybord, screenWidth/2-g.texture.keybord.Width/2, int32(float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)), rl.White)
-
 	if g.run {
 		for i := 0; i < g.lenght; i++ {
 			rl.DrawRectangle(int32(screenWidth/2-((squareSize*g.lenght+spaceBetweenSquare*g.lenght-1)/2)+(i*spaceBetweenSquare+i*squareSize)), 75+(g.tryNum*(squareSize+spaceBetweenSquare)), squareSize, squareSize, rl.Black)
