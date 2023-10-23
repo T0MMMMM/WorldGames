@@ -5,7 +5,7 @@ import (
 )
 
 func (g *EngineStruct) inputHangman() {
-	/* Cette boucle permet de tester les touches de clavier pressés, si la lettre a déja été pressé, cette dernière ne fonctionnera plus dans la suite du programme */
+	// Cette boucle permet de tester les touches de clavier pressés, si la lettre a déja été pressé, cette dernière ne fonctionnera plus dans la suite du programme
 	for i := 0; i < 26; i++ {
 		g.inputLetter = []int32{rl.KeyQ, rl.KeyB, rl.KeyC, rl.KeyD, rl.KeyE, rl.KeyF, rl.KeyG, rl.KeyH, rl.KeyI, rl.KeyJ, rl.KeyK, rl.KeyL, rl.KeySemicolon, rl.KeyN, rl.KeyO, rl.KeyP, rl.KeyA, rl.KeyR, rl.KeyS, rl.KeyT, rl.KeyU, rl.KeyV, rl.KeyZ, rl.KeyX, rl.KeyY, rl.KeyW}
 		if rl.IsKeyPressed(g.inputLetter[i]) {
@@ -19,13 +19,13 @@ func (g *EngineStruct) inputHangman() {
 			}
 		}
 	}
-	/* Si le nombre d'essaie est supérieur ou égale à 10 : la boucle s'arrète et l'utilisateur a perdu la partie */
+	// Si le nombre d'essaie est supérieur ou égale à 10 : la boucle s'arrète et l'utilisateur a perdu la partie
 	if g.tryNum >= 10 {
 		g.win = false
 		g.run = false
 
 	}
-	/* Si la longueur du nombre de lettres trouvées est égale aux nombre de lettres du mot à trouver : la boucle s'arrète et l'utilisateur a gagné la partie */
+	// Si la longueur du nombre de lettres trouvées est égale aux nombre de lettres du mot à trouver : la boucle s'arrète et l'utilisateur a gagné la partie 
 	if len(g.letterTest) == len(g.worldToFind) {
 		g.win = true
 		g.run = false
@@ -51,7 +51,7 @@ func (g *EngineStruct) inputHangman() {
 }
 
 func removeDuplicate(liste []int) []int {
-	/* Cette fonction permet de supprimer tous les doublons d'un tableau */
+	// Cette fonction permet de supprimer tous les doublons d'un tableau
 	for i := 0; i < len(liste)-1; i++ {
 		for j := i + 1; j < len(liste); j++ {
 			if liste[i] == liste[j] {

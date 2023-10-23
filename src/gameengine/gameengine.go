@@ -49,6 +49,7 @@ func (g *EngineStruct) Play() {
 	}
 
 	for g.run {
+		//Si le jeu est "Wordle", on lance ce Wordle, pareil pour Hangman
 		if g.numberGame == "Wordle" {
 			g.updateWordle()
 			g.inputWordle()
