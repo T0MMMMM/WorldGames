@@ -8,8 +8,10 @@ func (g *EngineStruct) renderWordle() {
 	rl.BeginDrawing()
 	rl.ClearBackground(g.bgColor)
 
+	// affiche le titre
 	rl.DrawTextEx(g.font, "WORDLE", rl.NewVector2(float32(screenWidth/2-85), 10), 60, 0, rl.White)
 	
+	// affiche le mot en cours ( le mot qu'il est entrain d'esseyer )
 	if g.run {
 		for i := 0; i < g.lenght; i++ {
 			rl.DrawRectangle(int32(screenWidth/2-((squareSize*g.lenght+spaceBetweenSquare*g.lenght-1)/2)+(i*spaceBetweenSquare+i*squareSize)), 75+(g.tryNum*(squareSize+spaceBetweenSquare)), squareSize, squareSize, rl.Black)
@@ -23,6 +25,7 @@ func (g *EngineStruct) renderWordle() {
 		}
 	}
 
+	// affiche les mot déjà testé
 	for j := 0; j < len(g.listeWorldFind); j++ {
 		for i := 0; i < len(g.listeWorldFind[j][0]); i++ {
 			rl.DrawRectangle(int32(screenWidth/2-((squareSize*g.lenght+spaceBetweenSquare*g.lenght-1)/2)+(i*spaceBetweenSquare+i*squareSize)), 75+(int32(j)*(squareSize+spaceBetweenSquare)), squareSize, squareSize, g.color[g.listeWorldFind[j][i+1]])

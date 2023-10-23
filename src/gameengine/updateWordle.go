@@ -8,6 +8,7 @@ func (g *EngineStruct) updateWordle() {
 
 	g.run = !rl.WindowShouldClose()
 
+	// on remplace la lettre pressé sur le clavier à la fin de la liste de mot "worldFind" 
 	for i := 0; i < 26; i++ {
 		if g.letter[i] {
 			for j := 0; j < g.lenght; j++ {
