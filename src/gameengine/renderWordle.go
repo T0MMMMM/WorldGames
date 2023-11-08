@@ -7,9 +7,10 @@ import (
 func (g *EngineStruct) renderWordle() {
 	rl.BeginDrawing()
 	rl.ClearBackground(g.bgColor)
+	rl.DrawTexture(g.texture.fondDegrade, 0, 0, rl.White)
 
 	// affiche le titre
-	rl.DrawTextEx(g.font, "WORDLE", rl.NewVector2(float32(screenWidth/2-85), 10), 60, 0, rl.White)
+	rl.DrawTextEx(g.font, "WORDLE", rl.NewVector2(float32(screenWidth/2-85), 10), 60, 0, rl.Black)
 	
 	// affiche le mot en cours (le mot qu'il est en train d'essayer)
 	if g.run {
@@ -19,9 +20,9 @@ func (g *EngineStruct) renderWordle() {
 		}
 	} else {
 		if g.win {
-			rl.DrawTextEx(g.font, "~~ GG T BO ~~", rl.NewVector2(float32(screenWidth/2-g.texture.keybord.Width/2)+160, float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)-75), 50, 0, rl.White)
+			rl.DrawTextEx(g.font, "~~ GG T BO ~~", rl.NewVector2(float32(screenWidth/2-g.texture.keybord.Width/2)+160, float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)-75), 50, 0, rl.Black)
 		} else {
-			rl.DrawTextEx(g.font, "~~ T NUL BOUFFON ~~", rl.NewVector2(float32(screenWidth/2-g.texture.keybord.Width/2)+95, float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)-75), 50, 0, rl.White)
+			rl.DrawTextEx(g.font, "~~ T NUL BOUFFON ~~", rl.NewVector2(float32(screenWidth/2-g.texture.keybord.Width/2)+95, float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)-75), 50, 0, rl.Black)
 		}
 	}
 

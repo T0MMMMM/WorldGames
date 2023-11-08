@@ -6,6 +6,5 @@ import (
 
 func main() {
 	var g engine.EngineStruct
-
 	g.Play()
 }

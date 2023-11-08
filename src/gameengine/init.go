@@ -21,6 +21,8 @@ type TextureStruct struct {
 	keybord rl.Texture2D
 	hangman rl.Texture2D
 	wordle rl.Texture2D
+	fondDegrade rl.Texture2D
+	wordgame rl.Texture2D
 }
 
 func (g *EngineStruct) testEq(a, b []rune) bool {
@@ -82,15 +84,16 @@ func (g *EngineStruct) init() {
 
 	g.usedLetters = append(g.usedLetters, 0)
 
-	g.color["green"] = rl.NewColor(34, 80, 42, 255)
-	g.color["yellow"] = rl.NewColor(65, 57, 12, 255)
-	g.color["grey"] = rl.NewColor(21, 21, 21, 255)
-
+	g.color["green"] = rl.Green
+	g.color["yellow"] = rl.Orange
+	g.color["grey"] = rl.Black
 	g.font = rl.LoadFont("../texture/neue-helvetica-75-bold.otf")
 	
 	g.texture.keybord = rl.LoadTexture("../texture/clavierGris.png")
 	g.texture.hangman = rl.LoadTexture("../texture/hangman.png")
 	g.texture.wordle = rl.LoadTexture("../texture/wordle.png")
+	g.texture.fondDegrade = rl.LoadTexture("../texture/fond.png")
+	g.texture.wordgame = rl.LoadTexture("../texture/wordgame.png")
 	
 	g.inputLetter = []int32{rl.KeyA, rl.KeyB, rl.KeyC, rl.KeyD, rl.KeyE, rl.KeyF, rl.KeyG, rl.KeyH, rl.KeyI, rl.KeyJ, rl.KeyK, rl.KeyL, rl.KeyM, rl.KeyN, rl.KeyO, rl.KeyP, rl.KeyQ, rl.KeyR, rl.KeyS, rl.KeyT, rl.KeyU, rl.KeyV, rl.KeyW, rl.KeyX, rl.KeyY, rl.KeyZ}
 	for i := 0; i < 26; i++ {

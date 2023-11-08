@@ -7,7 +7,7 @@ import (
 func (g *EngineStruct) renderHangman() {
 	rl.BeginDrawing()
 	rl.ClearBackground(rl.White)
-
+	rl.DrawTexture(g.texture.fondDegrade, 0, 0, rl.White)
 	rl.DrawTextEx(g.font, "HANGMAN", rl.NewVector2(float32(screenWidth/2-125), 10), 60, 0, rl.Black)
 	if g.run {
 		for i := 0; i < g.lenght; i++ {

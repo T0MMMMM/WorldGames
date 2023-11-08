@@ -61,7 +61,7 @@ func (g *EngineStruct) Play() {
 			g.renderHangman()
 		}
 	}
-	time.Sleep(2 * time.Second)
+	time.Sleep(3 * time.Second)
 
 	for i := 0; i < g.lenght; i ++ {
 		fmt.Printf(string(g.worldToFind[i]))
