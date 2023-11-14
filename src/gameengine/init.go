@@ -93,8 +93,8 @@ func (g *EngineStruct) init() {
 
 	g.usedLetters = append(g.usedLetters, 0)
 
-	g.color["green"] = rl.Green
-	g.color["yellow"] = rl.Orange
+	g.color["green"] = rl.NewColor(0, 191, 99, 255)
+	g.color["yellow"] = rl.NewColor(255, 222, 89, 255)
 	g.color["grey"] = rl.Black
 	g.font = rl.LoadFont("../texture/neue-helvetica-75-bold.otf")
 	
