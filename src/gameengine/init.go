@@ -68,6 +68,15 @@ func (g *EngineStruct) inListeFind(k int, list [][]string) bool {
 	return true
 }
 
+func (g *EngineStruct) printWord() {
+	mot := " "
+	for i := 0; i < g.lenght; i ++ {
+		mot += string(g.worldToFind[i])
+	}
+	rl.DrawTextEx(g.font, "LE MOT ETAIT : ", rl.NewVector2(float32(screenWidth/2-g.texture.keybord.Width/2), float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)+20), 50, 0, rl.Black)	
+	rl.DrawTextEx(g.font, mot, rl.NewVector2(float32(screenWidth/2-g.texture.keybord.Width/2)+295, float32(screenHeight)/1.2-float32(g.texture.keybord.Height/2)+20), 50, 0, rl.Black)
+}
+
 func (g *EngineStruct) init() {
 	rl.InitWindow(screenWidth, screenHeight, "|")
 	rl.SetExitKey(0)
